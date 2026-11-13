@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinPlatformLib
+  FILE_GUID = 5b7a43a2-a53a-422b-83fb-52d3863d79e8
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = ArmPlatformLib
+[Sources]
+  PlatformLib.c
+[Packages]
+  MdePkg/MdePkg.dec
+  ArmPkg/ArmPkg.dec
+  ArmPlatformPkg/ArmPlatformPkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+[LibraryClasses]
+  BaseMemoryLib
+  MemoryAllocationLib
+  HobLib
+[Guids]
+  gLiuqinMemoryPlanGuid
+  gLiuqinHandoffGuid
+[FixedPcd]
+  gArmTokenSpaceGuid.PcdFdBaseAddress
+  gArmTokenSpaceGuid.PcdFdSize
+  gArmTokenSpaceGuid.PcdGicDistributorBase
+  gArmTokenSpaceGuid.PcdGicRedistributorsBase
+  gLiuqinTokenSpaceGuid.PcdUefiMemoryBase
+  gLiuqinTokenSpaceGuid.PcdUefiMemorySize
+  gLiuqinTokenSpaceGuid.PcdFramebufferBase
+  gLiuqinTokenSpaceGuid.PcdFramebufferSize

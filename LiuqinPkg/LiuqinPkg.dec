@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  DEC_SPECIFICATION = 0x0001001B
+  PACKAGE_NAME      = LiuqinPkg
+  PACKAGE_GUID      = 8a46b343-64f9-4c3c-9cc8-e9f3d4f164c1
+  PACKAGE_VERSION   = 100
+
+[Includes]
+  Include
+  ../Build/Include
+
+[LibraryClasses]
+  BootContractLib|Include/BootContract.h
+  BootPolicyLib|Include/BootPolicyLib.h
+  SmmuLayoutLib|Include/SmmuLayout.h
+  UsbVbusPolicyLib|Include/Library/UsbVbusPolicy.h
+  SpmiReadLib|Include/SpmiRead.h
+  UfsSmmuProbeLib|Include/UfsSmmuProbe.h
+
+[Guids]
+  gLiuqinTokenSpaceGuid = { 0x6a32d3bb, 0xc72f, 0x4e8d, { 0xa8, 0x2f, 0x9c, 0x57, 0xda, 0xe7, 0x71, 0x01 } }
+  gLiuqinHandoffGuid    = { 0x9d65870b, 0x5f41, 0x4a40, { 0x92, 0xa7, 0xd3, 0x28, 0x4e, 0x73, 0x9c, 0x11 } }
+  gLiuqinMemoryPlanGuid = { 0xc088c4ae, 0x820f, 0x4453, { 0xb8, 0x91, 0x8a, 0x87, 0x78, 0x9e, 0x13, 0x2c } }
+
+[Protocols]
+  gLiuqinUfsReadyProtocolGuid = { 0x3b38eb9c, 0x1b24, 0x43fc, { 0x99, 0x36, 0x9c, 0x85, 0x7f, 0xf8, 0x7b, 0xc2 } }
+  gLiuqinUsbReadyProtocolGuid = { 0x6bb6caf7, 0xd92b, 0x4e72, { 0x84, 0x4e, 0x8c, 0xca, 0x77, 0x07, 0x4f, 0x31 } }
+  gLiuqinTpmReadyProtocolGuid = { 0x4f5a1c6e, 0x8e0d, 0x4b37, { 0xa5, 0x62, 0x9c, 0x14, 0xd8, 0x7b, 0x3e, 0x51 } }
+
+[PcdsFixedAtBuild]
+  gLiuqinTokenSpaceGuid.PcdUefiMemoryBase|0xAD000000|UINT64|0x00000001
+  gLiuqinTokenSpaceGuid.PcdUefiMemorySize|0x06000000|UINT32|0x00000002
+  gLiuqinTokenSpaceGuid.PcdPrePiStackSize|0x00040000|UINT32|0x00000003
+  gLiuqinTokenSpaceGuid.PcdFramebufferBase|0xB8000000|UINT64|0x00000010
+  gLiuqinTokenSpaceGuid.PcdFramebufferSize|0x02B00000|UINT32|0x00000011
+  gLiuqinTokenSpaceGuid.PcdFramebufferWidth|1800|UINT32|0x00000012
+  gLiuqinTokenSpaceGuid.PcdFramebufferHeight|2880|UINT32|0x00000013
+  gLiuqinTokenSpaceGuid.PcdFramebufferStride|7200|UINT32|0x00000014

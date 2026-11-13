@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinUfsSmmuProbeLib
+  FILE_GUID = F9838A35-5171-477E-A967-96D49C421E6B
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = UfsSmmuProbeLib
+[Sources]
+  UfsSmmuProbe.c
+[Packages]
+  MdePkg/MdePkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+[LibraryClasses]
+  SmmuLayoutLib

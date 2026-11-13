@@ -1,0 +1,43 @@
+# SPDX-License-Identifier: MIT
+
+[Defines]
+  INF_VERSION                    = 0x0001001B
+  BASE_NAME                      = KernelErrataPatcherLib
+  FILE_GUID                      = 964EFA94-9929-4EF8-9E68-8F6F6FA62E63
+  MODULE_TYPE                    = DXE_DRIVER
+  LIBRARY_CLASS                  = KernelErrataPatcherLib|DXE_DRIVER
+  VERSION_STRING                 = 1.00
+  CONSTRUCTOR                    = KernelErrataPatcherLibConstructor
+
+[Sources]
+  KernelErrataPatcherLib.c
+  BootServicesIntercepter.c
+  OsLoaderIntercepter.c
+  MmuProtectionHelper.c
+  Utilities.c
+
+[Sources.AARCH64]
+  BootServicesIntercepterHelper.S
+
+[Packages]
+  EmbeddedPkg/EmbeddedPkg.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+
+[LibraryClasses]
+  BaseMemoryLib
+  CacheMaintenanceLib
+  DebugLib
+  DxeServicesTableLib
+  MemoryAllocationLib
+  PerformanceLib
+  UefiBootServicesTableLib
+  UefiLib
+
+[Protocols]
+  gEfiMemoryAttributeProtocolGuid
+
+[Guids]
+  gEfiEventExitBootServicesGuid       ## CONSUMES
+  gEfiEventReadyToBootGuid

@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+
+[Defines]
+  INF_VERSION                    = 0x0001001B
+  BASE_NAME                      = LiuqinFramebufferDxe
+  FILE_GUID                      = 1C3DCAD1-39BA-4C4D-BC24-BD132B4255A8
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.00
+  ENTRY_POINT                    = FramebufferDxeEntryPoint
+
+[Sources]
+  FramebufferDxe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+
+[LibraryClasses]
+  BaseMemoryLib
+  DebugLib
+  FrameBufferBltLib
+  HobLib
+  MemoryAllocationLib
+  PcdLib
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+
+[FixedPcd]
+  gLiuqinTokenSpaceGuid.PcdFramebufferBase
+  gLiuqinTokenSpaceGuid.PcdFramebufferSize
+
+[Guids]
+  gLiuqinHandoffGuid
+
+[Protocols]
+  gEfiDevicePathProtocolGuid
+  gEfiGraphicsOutputProtocolGuid
+
+[Depex]
+  TRUE

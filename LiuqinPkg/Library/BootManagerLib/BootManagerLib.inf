@@ -1,0 +1,48 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+
+[Defines]
+  INF_VERSION                    = 0x0001001B
+  BASE_NAME                      = LiuqinBootManagerLib
+  FILE_GUID                      = CB0C2FDA-CC18-42ED-9E3F-686DCB82FD36
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.00
+  LIBRARY_CLASS                  = PlatformBootManagerLib|DXE_DRIVER
+
+[Sources]
+  BootManagerLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+
+[LibraryClasses]
+  BaseLib
+  BaseMemoryLib
+  KernelErrataPatcherLib
+  DebugLib
+  DevicePathLib
+  DxeServicesLib
+  MemoryAllocationLib
+  BootPolicyLib
+  SortLib
+  UefiBootManagerLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  UefiLib
+
+[Guids]
+  gEfiEndOfDxeEventGroupGuid
+  gEfiEventReadyToBootGuid
+  gEfiGlobalVariableGuid
+  gEfiVirtualDiskGuid
+  gEfiFileInfoGuid
+
+[Protocols]
+  gEfiGraphicsOutputProtocolGuid
+  gEfiSimpleTextInProtocolGuid
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiUsb2HcProtocolGuid
+  gLiuqinUsbReadyProtocolGuid
+
+[FixedPcd]

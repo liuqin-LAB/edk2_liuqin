@@ -1,0 +1,18 @@
+/* SPDX-License-Identifier: BSD-2-Clause-Patent */
+        Device (UFS0)
+        {
+            Name (_HID, "QCOM24A5")
+            Name (_UID, "UFS0")
+            Name (_CCA, Zero)
+            Name (_STA, Zero)
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite, 0x01D84000, 0x0001C000)
+                Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive) {297}
+            })
+            Device (DEV0)
+            {
+                Name (_ADR, 0x08)
+                Name (_RMV, Zero)
+            }
+        }

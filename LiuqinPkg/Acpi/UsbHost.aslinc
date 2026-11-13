@@ -1,0 +1,13 @@
+/* SPDX-License-Identifier: BSD-2-Clause-Patent */
+        Device (USB0)
+        {
+            Name (_HID, "PNP0D10")
+            Name (_UID, "USB0")
+            Name (_CCA, Zero)
+            Name (_STA, Zero)
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite, 0x0A600000, 0x00008000)
+                Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive) {165}
+            })
+        }

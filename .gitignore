@@ -1,0 +1,9 @@
+/Build/
+/__pycache__/
+/boot-liuqin.img
+/boot-liuqin.img.sha256
+/Conf/.cache/
+/Conf/.AutoGenIdFile.txt
+/Conf/tools_def.txt
+/Conf/build_rule.txt
+/Conf/BuildEnv.sh

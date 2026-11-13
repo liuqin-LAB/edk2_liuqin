@@ -1,0 +1,40 @@
+/* SPDX-License-Identifier: BSD-2-Clause-Patent */
+
+        Device (LID0)
+        {
+            Name (_HID, "PNP0C0D")
+            Name (_UID, Zero)
+            Name (_STR, Unicode ("Liuqin cover lid"))
+            Name (_STA, 0x0F)
+            Name (_DEP, Package () { TLMM })
+
+            Method (_LID, 0, NotSerialized)
+            {
+                Return (\_SB.TLMM.LRAW)
+            }
+        }
+
+        Device (SLAT)
+        {
+            Name (_HID, "LQIN0021")
+            Name (_CID, "PNP0C60")
+            Name (_UID, Zero)
+            Name (_STR, Unicode ("Liuqin keyboard fold-back mode"))
+            Name (_STA, 0x0F)
+            Name (_DEP, Package () { TLMM })
+            Name (_CRS, ResourceTemplate ()
+            {
+                GpioInt (Edge, ActiveBoth, Exclusive, PullDefault, 15000,
+                         "\\_SB.TLMM", 0, ResourceConsumer, ,) { 23 }
+            })
+        }
+
+        Device (BTTN)
+        {
+            Name (_HID, "LQIN0020")
+            Name (_CID, "PNP0C40")
+            Name (_UID, Zero)
+            Name (_STR, Unicode ("Liuqin power and volume buttons"))
+            Name (_STA, 0x0F)
+            Name (_DEP, Package () { PM01, PM12 })
+        }

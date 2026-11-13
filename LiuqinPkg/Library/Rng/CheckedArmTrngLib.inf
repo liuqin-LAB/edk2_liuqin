@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinCheckedArmTrngLib
+  FILE_GUID = 3426c2b3-ef10-46fc-bd8c-5f66d98fdc97
+  MODULE_TYPE = BASE
+  LIBRARY_CLASS = ArmTrngLib
+  CONSTRUCTOR = LiuqinArmTrngConstructor
+[Sources]
+  CheckedArmTrngLib.c
+[Packages]
+  MdePkg/MdePkg.dec
+  ArmPkg/ArmPkg.dec
+[LibraryClasses]
+  ArmMonitorLib
+  BaseMemoryLib
+  DebugLib

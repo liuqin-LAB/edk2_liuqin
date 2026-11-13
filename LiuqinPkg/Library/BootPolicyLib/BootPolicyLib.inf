@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinBootPolicyLib
+  FILE_GUID = 5F1B7B57-1C60-4C2B-9E47-2D2B0C4A3E10
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = BootPolicyLib
+[Sources]
+  BootPolicyLib.c
+[Packages]
+  MdePkg/MdePkg.dec
+  LiuqinPkg/LiuqinPkg.dec

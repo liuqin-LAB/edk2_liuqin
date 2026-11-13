@@ -1,0 +1,56 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinPrePi
+  FILE_GUID = c731874d-3a3b-4e73-bb58-86712ac16c57
+  MODULE_TYPE = SEC
+  VERSION_STRING = 1.00
+[Sources]
+  Entry.S
+  PrePi.c
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ArmPkg/ArmPkg.dec
+  ArmPlatformPkg/ArmPlatformPkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+[LibraryClasses]
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+  ArmLib
+  ArmMmuLib
+  ArmPlatformLib
+  FdtLib
+  BootContractLib
+  HobLib
+  PrePiLib
+  PrePiHobListPointerLib
+  MemoryAllocationLib
+  CacheMaintenanceLib
+  ExtractGuidedSectionLib
+  PeCoffLib
+  SerialPortLib
+  IoLib
+  TimerLib
+[Guids]
+  gLiuqinHandoffGuid
+  gLiuqinMemoryPlanGuid
+  gFdtHobGuid
+[FixedPcd]
+  gArmTokenSpaceGuid.PcdFdBaseAddress
+  gArmTokenSpaceGuid.PcdFdSize
+  gArmTokenSpaceGuid.PcdFvBaseAddress
+  gArmTokenSpaceGuid.PcdFvSize
+  gArmTokenSpaceGuid.PcdGicRedistributorsBase
+  gArmTokenSpaceGuid.PcdGicDistributorBase
+  gLiuqinTokenSpaceGuid.PcdUefiMemoryBase
+  gLiuqinTokenSpaceGuid.PcdUefiMemorySize
+  gLiuqinTokenSpaceGuid.PcdPrePiStackSize
+  gLiuqinTokenSpaceGuid.PcdFramebufferBase
+  gLiuqinTokenSpaceGuid.PcdFramebufferSize
+  gLiuqinTokenSpaceGuid.PcdFramebufferWidth
+  gLiuqinTokenSpaceGuid.PcdFramebufferHeight
+  gLiuqinTokenSpaceGuid.PcdFramebufferStride

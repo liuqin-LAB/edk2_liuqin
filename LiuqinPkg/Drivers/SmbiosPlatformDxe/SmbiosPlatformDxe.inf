@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinSmbiosPlatformDxe
+  FILE_GUID = 907aeb96-320c-4264-ad3c-cd6ad61c2043
+  MODULE_TYPE = DXE_DRIVER
+  ENTRY_POINT = LiuqinSmbiosEntry
+[Sources]
+  SmbiosPlatformDxe.c
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+[LibraryClasses]
+  ArmLib
+  BaseLib
+  BaseMemoryLib
+  BootContractLib
+  DebugLib
+  FdtLib
+  HobLib
+  MemoryAllocationLib
+  PcdLib
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+[Guids]
+  gLiuqinHandoffGuid
+[Protocols]
+  gEfiSmbiosProtocolGuid
+[FixedPcd]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString
+[Depex]
+  gEfiSmbiosProtocolGuid

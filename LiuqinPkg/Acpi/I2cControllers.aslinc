@@ -1,0 +1,80 @@
+/* SPDX-License-Identifier: BSD-2-Clause-Patent */
+
+        Device (IC01)
+        {
+            Name (_HID, "QCOM0220")
+            Name (_UID, "IC01")
+            Name (_STR, Unicode ("Qualcomm SM8475 QUP0 SE1 I2C"))
+            Name (_STA, 0x0F)
+            Name (_CCA, Zero)
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite, 0x00984000, 0x00004000)
+                Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive) { 634 }
+            })
+        }
+        Device (IC05)
+        {
+            Name (_HID, "QCOM0220")
+            Name (_UID, "IC05")
+            Name (_STR, Unicode ("Qualcomm SM8475 QUP0 SE5 I2C"))
+            Name (_STA, 0x0F)
+            Name (_CCA, Zero)
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite, 0x00994000, 0x00004000)
+                Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive) { 638 }
+            })
+        }
+        Device (IC11)
+        {
+            Name (_HID, "QCOM0220")
+            Name (_UID, "IC11")
+            Name (_STR, Unicode ("Qualcomm SM8475 QUP1 SE1 I2C"))
+            Name (_STA, 0x0F)
+            Name (_CCA, Zero)
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite, 0x00A84000, 0x00004000)
+                Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive) { 386 }
+            })
+        }
+        Device (IC15)
+        {
+            Name (_HID, "QCOM0220")
+            Name (_UID, "IC15")
+            Name (_STR, Unicode ("Qualcomm SM8475 QUP1 SE5 I2C"))
+            Name (_STA, 0x0F)
+            Name (_CCA, Zero)
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite, 0x00A94000, 0x00004000)
+                Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive) { 390 }
+            })
+        }
+        Device (IC20)
+        {
+            Name (_HID, "QCOM0220")
+            Name (_UID, "IC20")
+            Name (_STR, Unicode ("Qualcomm SM8475 QUP2 SE0 I2C"))
+            Name (_STA, 0x0F)
+            Name (_CCA, Zero)
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite, 0x00880000, 0x00004000)
+                Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive) { 405 }
+            })
+        }
+        Device (IC22)
+        {
+            Name (_HID, "QCOM0220")
+            Name (_UID, "IC22")
+            Name (_STR, Unicode ("Qualcomm SM8475 QUP2 SE2 I2C"))
+            Name (_STA, 0x0F)
+            Name (_CCA, Zero)
+            Name (_CRS, ResourceTemplate ()
+            {
+                Memory32Fixed (ReadWrite, 0x00888000, 0x00004000)
+                Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive) { 616 }
+            })
+        }

@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinSpmiWriteLib
+  FILE_GUID = 4d0b0b81-4b16-4a1f-9f6f-51a5b0e4c9c3
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = SpmiWriteLib
+[Sources]
+  SpmiWrite.c
+[Packages]
+  MdePkg/MdePkg.dec
+  LiuqinPkg/LiuqinPkg.dec

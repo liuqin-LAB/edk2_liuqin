@@ -1,0 +1,55 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+
+[Defines]
+  INF_VERSION                    = 0x0001001B
+  BASE_NAME                      = LiuqinUsbHostDxe
+  FILE_GUID                      = 87217510-D38C-4EC5-95E6-24E1B6156720
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.00
+  ENTRY_POINT                    = UsbHostDxeEntryPoint
+
+[Sources]
+  UsbHostDxe.c
+  UsbHostPolicy.c
+  UsbHostPolicy.h
+  VbusSnapshot.c
+  VbusSnapshot.h
+  VbusMonitor.c
+  VbusMonitor.h
+  VbusProductionAdapter.c
+  VbusProductionAdapter.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+
+[LibraryClasses]
+  BaseLib
+  BaseMemoryLib
+  BootContractLib
+  DebugLib
+  FdtLib
+  HobLib
+  IoLib
+  NonDiscoverableDeviceRegistrationLib
+  PrintLib
+  SpmiReadLib
+  SpmiWriteLib
+  UsbVbusPolicyLib
+  TimerLib
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+  UefiLib
+
+[Guids]
+  gEfiEventExitBootServicesGuid
+  gEfiEventReadyToBootGuid
+  gLiuqinHandoffGuid
+
+[Protocols]
+  gEfiUsb2HcProtocolGuid
+  gLiuqinUsbReadyProtocolGuid
+
+[Depex]
+  TRUE

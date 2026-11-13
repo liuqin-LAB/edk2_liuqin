@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinHashDxe
+  FILE_GUID = 4bce4ac3-e64a-4b10-b1ca-e97bfa847462
+  MODULE_TYPE = DXE_DRIVER
+  ENTRY_POINT = HashEntry
+[Sources]
+  HashDxe.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  BaseMemoryLib
+  MemoryAllocationLib
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+[Protocols]
+  gEfiHashServiceBindingProtocolGuid
+  gEfiHashProtocolGuid
+[Guids]
+  gEfiHashAlgorithmSha256NoPadGuid
+  gEfiHashAlgorithmSha1Guid
+[Depex]
+  TRUE

@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinSpmiReadLib
+  FILE_GUID = 1a306ddc-7318-47b6-921d-841757a03d40
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = SpmiReadLib
+[Sources]
+  SpmiRead.c
+[Packages]
+  MdePkg/MdePkg.dec
+  LiuqinPkg/LiuqinPkg.dec

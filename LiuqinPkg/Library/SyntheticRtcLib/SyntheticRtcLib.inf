@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinSyntheticRtcLib
+  FILE_GUID = 5E028E76-71F4-43B2-87A4-7BA01885CC30
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = RealTimeClockLib
+[Sources]
+  SyntheticRtcLib.c
+[Packages]
+  MdePkg/MdePkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+[LibraryClasses]
+  TimerLib
+[BuildOptions]
+  *_*_*_CC_FLAGS = -DBUILD_EPOCH=$(SOURCE_DATE_EPOCH)

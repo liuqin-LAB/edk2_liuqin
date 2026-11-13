@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinSmmuLayoutLib
+  FILE_GUID = 3D76DB29-F6DD-48E0-BF22-33413871804C
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = SmmuLayoutLib
+[Sources]
+  SmmuLayout.c
+[Packages]
+  MdePkg/MdePkg.dec
+  LiuqinPkg/LiuqinPkg.dec

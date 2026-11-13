@@ -1,0 +1,64 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinAcpiPlatformDxe
+  FILE_GUID = b79d6373-52d9-41b3-92b1-7d7edc3e17ee
+  MODULE_TYPE = DXE_DRIVER
+  VERSION_STRING = 1.00
+  ENTRY_POINT = LiuqinAcpiEntryPoint
+
+[Sources]
+  AcpiPlatformDxe.c
+  AcpiNamespace.c
+  AcpiNamespace.h
+  AcpiCmdDb.c
+  AcpiCmdDb.h
+  AcpiRpmh.c
+  AcpiRpmh.h
+  AcpiPcie.c
+  AcpiPcie.h
+  AcpiPciePhy.c
+  AcpiPciePhy.h
+  AcpiWlan.c
+  AcpiWlan.h
+  AcpiPcieLink.c
+  AcpiPcieLink.h
+  AcpiPcieEcam.c
+  AcpiPcieEcam.h
+  AcpiPcieHandoff.c
+  AcpiPcieHandoff.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  DynamicTablesPkg/DynamicTablesPkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+
+[LibraryClasses]
+  AmlLib
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+  MemoryAllocationLib
+  PcdLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  UefiDriverEntryPoint
+  UefiLib
+  IoLib
+  TimerLib
+
+[Protocols]
+  gEfiAcpiTableProtocolGuid
+  gLiuqinUfsReadyProtocolGuid
+  gLiuqinUsbReadyProtocolGuid
+  gLiuqinTpmReadyProtocolGuid
+
+[Guids]
+  gEfiAcpiTableGuid
+  gEfiEndOfDxeEventGroupGuid
+  gEfiEventReadyToBootGuid
+
+[Depex]
+  gEfiAcpiTableProtocolGuid
+
+[FixedPcd]

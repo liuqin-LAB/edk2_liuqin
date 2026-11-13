@@ -1,0 +1,22 @@
+/* SPDX-License-Identifier: BSD-2-Clause-Patent */
+
+Device (PEP0)
+{
+    Name (_HID, "LQIN0030")
+    Name (_UID, Zero)
+    Name (_STR, Unicode ("Liuqin platform power coordinator"))
+    Name (_STA, 0x0F)
+    Name (_DEP, Package () { GCC0, RPM0, AOSS, SPM0, IPC0 })
+    Name (_DSD, Package ()
+    {
+        ToUUID ("e8f6aef2-65a0-4af9-9b4a-cff89da633a8"),
+        Package ()
+        {
+            Package () { "interface-name", "cape-platform-power-v1" },
+            Package () { "interface-version", 1 },
+            Package () { "clock-provider", GCC0 },
+            Package () { "rpmh-provider", RPM0 },
+            Package () { "spmi-provider", SPM0 }
+        }
+    })
+}

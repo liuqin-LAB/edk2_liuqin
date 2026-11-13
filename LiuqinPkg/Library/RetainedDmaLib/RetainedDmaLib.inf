@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinRetainedDmaLib
+  FILE_GUID = 7a3fb8f1-103b-4c9b-8ec0-85070d18e2f9
+  MODULE_TYPE = DXE_DRIVER
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = DmaLib
+  CONSTRUCTOR = LiuqinRetainedDmaLibConstructor
+[Sources]
+  RetainedDmaLib.c
+  RetainedDmaLib.h
+[Packages]
+  EmbeddedPkg/EmbeddedPkg.dec
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  BaseLib
+  BaseMemoryLib
+  DxeServicesTableLib
+  UefiBootServicesTableLib
+  PcdLib
+[Protocols]
+  gEfiCpuArchProtocolGuid
+[Pcd]
+  gEmbeddedTokenSpaceGuid.PcdDmaDeviceOffset
+  gEmbeddedTokenSpaceGuid.PcdDmaDeviceLimit
+[Depex]
+  gEfiCpuArchProtocolGuid

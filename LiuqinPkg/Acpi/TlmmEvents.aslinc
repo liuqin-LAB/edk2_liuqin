@@ -1,0 +1,21 @@
+/* SPDX-License-Identifier: BSD-2-Clause-Patent */
+
+            Name (_AEI, ResourceTemplate ()
+            {
+                GpioInt (Edge, ActiveBoth, Exclusive, PullDefault, 15000,
+                         "\\_SB.TLMM", 0, ResourceConsumer, ,) { 10 }
+            })
+
+            OperationRegion (LREG, GeneralPurposeIo, Zero, One)
+            Field (LREG, ByteAcc, NoLock, Preserve)
+            {
+                Connection (GpioIo (Exclusive, PullDefault, 0, 0,
+                                   IoRestrictionInputOnly, "\\_SB.TLMM", 0,
+                                   ResourceConsumer, ,) { 10 }),
+                LRAW, 1
+            }
+
+            Method (_E0A, 0, NotSerialized)
+            {
+                Notify (\_SB.LID0, 0x80)
+            }

@@ -1,0 +1,57 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinUfsHostDxe
+  FILE_GUID = F18D33DC-4ACA-48A7-AC1C-B6AF6DC30756
+  MODULE_TYPE = DXE_DRIVER
+  VERSION_STRING = 1.00
+  ENTRY_POINT = UfsHostDxeEntryPoint
+[Sources]
+  UfsHostDxe.c
+  UfsHostPolicy.c
+  UfsRuntimeDtb.c
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  LiuqinPkg/LiuqinPkg.dec
+[LibraryClasses]
+  BaseLib
+  BaseMemoryLib
+  BootContractLib
+  DebugLib
+  DevicePathLib
+  DmaLib
+  DxeServicesTableLib
+  FdtLib
+  HobLib
+  IoLib
+  MemoryAllocationLib
+  PcdLib
+  SmmuLayoutLib
+  UfsSmmuProbeLib
+  TimerLib
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+  UefiLib
+[FixedPcd]
+  gLiuqinTokenSpaceGuid.PcdUefiMemoryBase
+  gLiuqinTokenSpaceGuid.PcdUefiMemorySize
+  gLiuqinTokenSpaceGuid.PcdPrePiStackSize
+[Guids]
+  gLiuqinHandoffGuid
+  gLiuqinMemoryPlanGuid
+  gEfiHobMemoryAllocStackGuid
+  gEfiEventExitBootServicesGuid
+  gEfiEventReadyToBootGuid
+[Protocols]
+  gEdkiiUfsHostControllerProtocolGuid
+  gEdkiiUfsHcPlatformProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiExtScsiPassThruProtocolGuid
+  gEfiBlockIoProtocolGuid
+  gEfiBlockIo2ProtocolGuid
+  gLiuqinUfsReadyProtocolGuid
+  gEfiCpuArchProtocolGuid
+[Depex]
+  gEfiCpuArchProtocolGuid

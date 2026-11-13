@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LiuqinUsbVbusPolicyLib
+  FILE_GUID = 24d64296-00fd-40f2-aeaf-789f21b24a4d
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.00
+  LIBRARY_CLASS = UsbVbusPolicyLib
+[Sources]
+  UsbVbusPolicy.c
+[Packages]
+  MdePkg/MdePkg.dec
+  LiuqinPkg/LiuqinPkg.dec
